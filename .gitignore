@@ -19,3 +19,19 @@ service-account*.json
 .DS_Store
 .idea/
 .vscode/
+
+# 音声データ・モデル重み(大容量/個人情報。外部ストレージで管理)
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
+*.aac
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.bin
+data/raw/
+data/private/
