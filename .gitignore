@@ -1,0 +1,14 @@
+# 秘密情報
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+secrets/
+credentials.json
+
+# OS / エディタ
+.DS_Store
+.idea/
+.vscode/
