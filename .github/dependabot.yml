@@ -1,24 +1,34 @@
 version: 2
 updates:
-  # GitHub Actions: common to every project
+  # GitHub Actions: 全プロジェクト共通 (SHA ピン留めした uses の更新もここで行う)
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      # 公開直後の乗っ取り版を避けるため 7 日待つ (セキュリティ更新は対象外で即時)
+      default-days: 7
     groups:
       actions:
         patterns: ["*"]
 
-  # Uncomment the ecosystems you use
+  # 使う言語に合わせてコメントを外す。cooldown も必ず付けること
   # - package-ecosystem: "npm"
   #   directory: "/"
   #   schedule: { interval: "weekly" }
+  #   cooldown:
+  #     default-days: 7
+  #     semver-major-days: 14
   #   groups:
   #     minor-and-patch:
   #       update-types: ["minor", "patch"]
   # - package-ecosystem: "pip"
   #   directory: "/"
   #   schedule: { interval: "weekly" }
+  #   cooldown:
+  #     default-days: 7
   # - package-ecosystem: "docker"
   #   directory: "/"
   #   schedule: { interval: "weekly" }
+  #   cooldown:
+  #     default-days: 7
