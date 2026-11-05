@@ -21,6 +21,18 @@
 | モデル・合成(学習/推論) | [docs/agents/tts.md](docs/agents/tts.md) |
 | 評価・品質確認 | [docs/agents/qa.md](docs/agents/qa.md) |
 
+## 担当モデルの固定
+作業種別ごとにモデルを固定する。定義は `.claude/agents/` にあり、`model:` で強制される。
+
+| 作業 | エージェント | モデル |
+|---|---|---|
+| 設計・計画 | planner | Opus |
+| 実装 | implementer | Sonnet |
+| レビュー・助言 | reviewer | Fable |
+| 調査 | researcher | Haiku |
+
+役割別の指示書との対応: planner=coordinator、implementer=data+tts、reviewer=qa。researcher の調査結果は `docs/research/` に置く。
+
 自分の役割の指示書を読んでから作業を始める。指示書自体の修正も PR で行う。
 
 ## ディレクトリ方針(必要になった時点で作る)
